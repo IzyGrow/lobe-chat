@@ -4,10 +4,10 @@
 
 export const LOBE_CHAT_CLOUD = 'LobeChat Cloud';
 
-export const BRANDING_NAME = 'LobeChat';
-export const BRANDING_LOGO_URL = '';
+export const BRANDING_NAME = 'IzyGrow';
+export const BRANDING_LOGO_URL = '/images/izy-grow-logo.png';
 
-export const ORG_NAME = 'LobeHub';
+export const ORG_NAME = 'IzyGrow';
 
 export const BRANDING_URL = {
   help: undefined,
@@ -24,6 +24,6 @@ export const SOCIAL_URL = {
 };
 
 export const BRANDING_EMAIL = {
-  business: 'hello@lobehub.com',
-  support: 'support@lobehub.com',
+  business: 'hello@izygrow.com',
+  support: 'support@izygrow.com',
 };
