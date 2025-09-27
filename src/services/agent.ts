@@ -1,49 +1,16 @@
-import { lambdaClient } from '@/libs/trpc/client';
+import { MetaData } from '@lobechat/types';
 
-class AgentService {
-  createAgentKnowledgeBase = async (
-    agentId: string,
-    knowledgeBaseId: string,
-    enabled?: boolean,
-  ) => {
-    return lambdaClient.agent.createAgentKnowledgeBase.mutate({
-      agentId,
-      enabled,
-      knowledgeBaseId,
-    });
-  };
+import { BRANDING_LOGO_URL } from './branding';
 
-  deleteAgentKnowledgeBase = async (agentId: string, knowledgeBaseId: string) => {
-    return lambdaClient.agent.deleteAgentKnowledgeBase.mutate({ agentId, knowledgeBaseId });
-  };
-
-  toggleKnowledgeBase = async (agentId: string, knowledgeBaseId: string, enabled?: boolean) => {
-    return lambdaClient.agent.toggleKnowledgeBase.mutate({
-      agentId,
-      enabled,
-      knowledgeBaseId,
-    });
-  };
-
-  createAgentFiles = async (agentId: string, fileIds: string[], enabled?: boolean) => {
-    return lambdaClient.agent.createAgentFiles.mutate({ agentId, enabled, fileIds });
-  };
-
-  deleteAgentFile = async (agentId: string, fileId: string) => {
-    return lambdaClient.agent.deleteAgentFile.mutate({ agentId, fileId });
-  };
-
-  toggleFile = async (agentId: string, fileId: string, enabled?: boolean) => {
-    return lambdaClient.agent.toggleFile.mutate({
-      agentId,
-      enabled,
-      fileId,
-    });
-  };
-
-  getFilesAndKnowledgeBases = async (agentId: string) => {
-    return lambdaClient.agent.getKnowledgeBasesAndFiles.query({ agentId });
-  };
-}
-
-export const agentService = new AgentService();
+export const DEFAULT_AVATAR = '🤖';
+export const DEFAULT_USER_AVATAR = '😀';
+export const DEFAULT_SUPERVISOR_AVATAR = '🎙️';
+export const DEFAULT_SUPERVISOR_ID = 'supervisor';
+export const DEFAULT_BACKGROUND_COLOR = 'rgba(0,0,0,0)';
+export const DEFAULT_AGENT_META: MetaData = {
+    avatar: '🏢',
+    description: 'A+A 2025 fuarı hakkında uzman asistan. İş güvenliği ve sağlığı konularında size yardımcı olur.',
+    title: 'A+A 2025 Fuarı Asistanı',
+};
+export const DEFAULT_INBOX_AVATAR = BRANDING_LOGO_URL || '🤯';
+export const DEFAULT_USER_AVATAR_URL = BRANDING_LOGO_URL || '/icons/icon-192x192.png';
